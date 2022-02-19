@@ -52,7 +52,10 @@ export function fetchQuiz() {
           console.log(res)
           dispatch({type: types.SET_SELECTED_ANSWER, payload: null})
           dispatch({type: types.SET_INFO_MESSAGE, payload: res.data.message})
-          dispatch({type: types.SET_QUIZ_INTO_STATE, payload: quiz})
+          axios.get('http://localhost:9000/api/quiz/next')
+            .then(res => {
+            dispatch({type:types.SET_QUIZ_INTO_STATE, payload: res.data})
+            })
         })
         .catch(err => {
           console.error(err)

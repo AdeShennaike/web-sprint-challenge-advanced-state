@@ -18,7 +18,7 @@ function Quiz(props) {
   }
   const handleSubmit = () => {
     props.postAnswer(quiz, answer)
-    props.fetchQuiz()
+    // props.fetchQuiz()
   }
   
   console.log(quiz)
