@@ -16,11 +16,12 @@ function Quiz(props) {
   const handleWrongAnswer = () => {
     props.selectAnswer(quiz.answers[1])
   }
-  console.log(answer)
   const handleSubmit = () => {
     props.postAnswer(quiz, answer)
+    props.fetchQuiz()
   }
-
+  
+  console.log(quiz)
   return (
     <div id="wrapper">
       {

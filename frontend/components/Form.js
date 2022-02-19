@@ -23,7 +23,7 @@ export function Form(props) {
       <input maxLength={50} onChange={onChange}  value = {form.newQuestion} id="newQuestion" placeholder="Enter question" />
       <input maxLength={50} onChange={onChange}  value = {form.newTrueAnswer} id="newTrueAnswer" placeholder="Enter true answer" />
       <input maxLength={50} onChange={onChange}  value = {form.newFalseAnswer} id="newFalseAnswer" placeholder="Enter false answer" />
-      <button id="submitNewQuizBtn" disabled = {!form.newQuestion.trim().length && !form.newFalseAnswer.trim().length && !form.newTrueAnswer.trim().length}
+      <button id="submitNewQuizBtn" disabled = {!form.newQuestion.trim().length > 0 && !form.newFalseAnswer.trim().length > 0 && !form.newTrueAnswer.trim().length > 0}
 >Submit new quiz</button>
     </form>
   )
